@@ -76,5 +76,15 @@ public class Person {
                 return 1;
             }
         });
+        public static Comparator<Person> PerNameComparator = new Comparator<Person>() {
+
+            public int compare(Person s1, Person s2) {
+                String PersonName1 = s1.getFirstName().toUpperCase();
+                String PersonName2 = s2.getFirstName().toUpperCase();
+
+
+                return PersonName1.compareTo(PersonName2);
+
+            }};
 
 }

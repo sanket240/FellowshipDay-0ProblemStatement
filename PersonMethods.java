@@ -1,5 +1,5 @@
 package Addressbook;
-
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Iterator;
@@ -96,5 +96,9 @@ public class PersonMethods {
 	        ArrayList<Person>arr=new ArrayList<Person>(a.set);
 
 	        return arr;
+	    }
+	    public void sortByName()
+	    {
+	    	Collections.sort(person,Person.PerNameComparator);
 	    }
 }
