@@ -2,6 +2,7 @@ package Addressbook;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import java.util.Iterator;
 
 public class PersonMethods {
@@ -114,5 +115,32 @@ public class PersonMethods {
 	        for(Person p:person){
 	            System.out.println(p);
 	        }
-	    }    
+	    }
+	    
+	    public void SearchCity()
+	    {
+	    	Scanner input =new Scanner(System.in);
+	    	System.out.println("Enter city:");
+	    	String city_name=input.nextLine();
+	    	for(Person per : person)
+	    	{
+	    		if(city_name.equals(per.city))
+	    		{
+	    			System.out.println(per.toString());
+	    		}
+	    	}
+	    }
+	    public void SearchState()
+	    {
+	    	Scanner input =new Scanner(System.in);
+	    	System.out.println("Enter state:");
+	    	String state_name=input.nextLine();
+	    	for(Person per : person)
+	    	{
+	    		if(state_name.equals(per.state))
+	    		{
+	    			System.out.println(per.toString());
+	    		}
+	    	}
+	    }
 }

@@ -7,11 +7,10 @@ public class AddressBookMain {
         // TODO Auto-generated method stub
          int choice=1,person_count,i;
          PersonMethods personmethods=new PersonMethods();
-         personmethods.CreatePerson();
          Scanner s=new Scanner(System.in);
          while(choice!=0)
          {
-             System.out.println("1.Add Person\n2.Update\n3.Delete\n4.Duplicates\n5.Sort By Name\n");
+             System.out.println("1.Add Person\n2.Update\n3.Delete\n4.Duplicates\n5.Sort By Name\n6.Sort by City \n7.Sort by State\n8.Display\n9.Search By City\n10.Search by State");
              System.out.println("Enter Your Choice");
              choice=s.nextInt();
              switch (choice) {
@@ -52,6 +51,12 @@ public class AddressBookMain {
                 break;
              case 8:
                  personmethods.Display();
+                 break;
+             case 9:
+                 personmethods.SearchCity();
+                 break;
+             case 10:
+                 personmethods.SearchState();
                  break;
              }  
          }
