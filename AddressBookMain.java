@@ -44,6 +44,15 @@ public class AddressBookMain {
              case 5:
                 personmethods.sortByName();
                 break;
+             case 6:
+                personmethods.sortByCity();
+                break;
+             case 7:
+                personmethods.sortByState();
+                break;
+             case 8:
+                 personmethods.Display();
+                 break;
              }  
          }
     }

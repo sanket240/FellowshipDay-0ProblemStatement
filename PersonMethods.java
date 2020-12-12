@@ -101,4 +101,18 @@ public class PersonMethods {
 	    {
 	    	Collections.sort(person,Person.PerNameComparator);
 	    }
+	    public void sortByCity()
+	    {
+	    	Collections.sort(person,Person.PerCityComparator);
+	    }
+	    public void sortByState()
+	    {
+	    	Collections.sort(person,Person.PerStateComparator);
+	    }
+
+	    public void Display(){
+	        for(Person p:person){
+	            System.out.println(p);
+	        }
+	    }    
 }
