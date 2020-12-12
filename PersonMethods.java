@@ -2,6 +2,7 @@ package Addressbook;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Iterator;
 
 public class PersonMethods {
 	int id=0;
@@ -29,14 +30,13 @@ public class PersonMethods {
       person.add(person1);	
 	}
 	
-	 public void update(String name,String u)
+	 public void UpdatePerson(String name,String u)
 	 {
 	        int flag=0;
 	        Scanner s=new Scanner(System.in);
-	        for(Person p:person)
+	        for(Person p:person){
+	        if(p.firstName.equals(name))
 	        {
-	        	if(p.firstName.equals(name))
-	        	{
 	                flag=1;
 	                switch (u)
 	                {
@@ -57,16 +57,36 @@ public class PersonMethods {
 	                        p.zip=s.nextInt();
 	                        break;
 	                }
-
 	          }
 	      }
+	        if(flag==0){
+	            System.out.println("Not Found");
+	        }
+	        else{
+	            System.out.println("Update Successfully");
+	        }
+	    }
+	 public void DeletePerson(String name)
+	 {
+		   int flag=0;
+	        Scanner s=new Scanner(System.in);
+	        Iterator<Person> itr=person.iterator();
+	        while(itr.hasNext())
+	        {
+	            Person a=itr.next();
+	            if(a.firstName.equals(name))
+	            {
+	                flag=1;
+	                itr.remove();
+	            }
+	        }
 	        if(flag==0)
 	        {
 	            System.out.println("Not Found");
 	        }
 	        else
 	        {
-	            System.out.println("Update Successfully");
+	            System.out.println("Delete Successfully");
 	        }
-	  }
+	 }
 }
