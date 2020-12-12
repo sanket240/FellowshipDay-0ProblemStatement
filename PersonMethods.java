@@ -5,26 +5,68 @@ import java.util.Scanner;
 
 public class PersonMethods {
 	int id=0;
+	ArrayList<Person> person=new ArrayList<>();
 	public void CreatePerson()
 	{
 	  id++;
-	  ArrayList<Person> person=new ArrayList<>();
+	  
       Person person1=new Person();
       person1.id=id;
       System.out.println("Enter Your First Name");
-      Scanner s=new Scanner(System.in);
-      person1.firstName=s.nextLine();
+      Scanner scanner=new Scanner(System.in);
+      person1.firstName=scanner.nextLine();
       System.out.println("Enter Your Last Name");
-      person1.lastName=s.nextLine();
+      person1.lastName=scanner.nextLine();
       System.out.println("Enter Your city Name");
-      person1.city=s.nextLine();
+      person1.city=scanner.nextLine();
       System.out.println("Enter Your state Name");
-      person1.state=s.nextLine();
+      person1.state=scanner.nextLine();
       System.out.println("Enter Your phone Number");
-      person1.phNo=s.nextLine();
+      person1.phNo=scanner.nextLine();
       System.out.println("Enter Your zip");
-      person1.zip=s.nextInt();
+      person1.zip=scanner.nextInt();
       System.out.println("Added Successfully");
       person.add(person1);	
 	}
+	
+	 public void update(String name,String u)
+	 {
+	        int flag=0;
+	        Scanner s=new Scanner(System.in);
+	        for(Person p:person)
+	        {
+	        	if(p.firstName.equals(name))
+	        	{
+	                flag=1;
+	                switch (u)
+	                {
+	                    case "city":
+	                        System.out.println("Enter Your city Name");
+	                        p.city=s.nextLine();
+	                        break;
+	                    case "state":
+	                        System.out.println("Enter Your state Name");
+	                        p.state=s.nextLine();
+	                        break;
+	                    case "phNo":
+	                        System.out.println("Enter Your phone Number");
+	                        p.phNo=s.nextLine();
+	                        break;
+	                    case "zip":
+	                        System.out.println("Enter Your zip");
+	                        p.zip=s.nextInt();
+	                        break;
+	                }
+
+	          }
+	      }
+	        if(flag==0)
+	        {
+	            System.out.println("Not Found");
+	        }
+	        else
+	        {
+	            System.out.println("Update Successfully");
+	        }
+	  }
 }

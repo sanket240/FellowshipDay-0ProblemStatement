@@ -10,12 +10,19 @@ public class AddressBookMain {
 		 Scanner s=new Scanner(System.in);
 		 while(choice!=0)
 		 {
-			 System.out.println("1.Add Person\n");
+			 System.out.println("1.Add Person\n2.Update");
 			 System.out.println("Enter Your Choice");
 	         choice=s.nextInt();
 	         switch (choice) {
              case 1:
             	 personmethods.CreatePerson();
+                 break;
+             case 2:
+            	 System.out.println("Enter name to Update");
+                 String name=s.next();
+                 System.out.println("Enter what to update");
+                 String wht=s.next();
+                 personmethods.update(name,wht);
                  break;
 	         }    
 		 }
