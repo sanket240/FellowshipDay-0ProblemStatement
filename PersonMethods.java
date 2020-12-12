@@ -89,4 +89,12 @@ public class PersonMethods {
 	            System.out.println("Delete Successfully");
 	        }
 	 }
+
+	    public ArrayList<Person> unique(){
+	        Person a=new Person();
+	        a.set.addAll(person);
+	        ArrayList<Person>arr=new ArrayList<Person>(a.set);
+
+	        return arr;
+	    }
 }

@@ -1,4 +1,6 @@
 package Addressbook;
+import java.util.Comparator;
+import java.util.TreeSet;
 
 public class Person {
 		int id;
@@ -62,5 +64,17 @@ public class Person {
 	    public void setPhNo(String phNo) {
 	        this.phNo = phNo;
 	    }
+
+        TreeSet set = new TreeSet(new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                Person a1=(Person)o1;
+                Person a2=(Person)o2;
+                if(a1.getFirstName().equalsIgnoreCase(a2.getFirstName())){
+                    return 0;
+                }
+                return 1;
+            }
+        });
 
 }

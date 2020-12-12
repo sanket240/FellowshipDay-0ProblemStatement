@@ -1,4 +1,5 @@
 package Addressbook;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class AddressBookMain {
 
@@ -10,7 +11,7 @@ public class AddressBookMain {
 		 Scanner s=new Scanner(System.in);
 		 while(choice!=0)
 		 {
-			 System.out.println("1.Add Person\n");
+			 System.out.println("1.Add Person\n2.Update\n3.Delete\n4.Duplicates");
 			 System.out.println("Enter Your Choice");
 	         choice=s.nextInt();
 	         switch (choice) {
@@ -34,9 +35,11 @@ public class AddressBookMain {
                  String n=s.next();
                  personmethods.DeletePerson(n);
                  break;
+             case 4:
+                	ArrayList<Person> h= personmethods.unique();
+                    for(Person a:h){
+                        System.out.println(a);
+                    }
 	         }  
 		 }
 	}
-
-}
-
