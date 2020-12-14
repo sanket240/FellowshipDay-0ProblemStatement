@@ -9,7 +9,7 @@ public class AddressBookMain {
          Scanner scanner=new Scanner(System.in);
          while(choice!=0)
          {
-             System.out.println("1.Add Person\n2.Update\n3.Delete\n4.Sort By Name\n5.Sort by City \n6.Sort by State\n7.Sort by Zip\n8.Display\n9.View By City\n10.View By State");
+             System.out.println("1.Add Person\n2.Update\n3.Delete\n4.Sort By Name\n5.Sort by City \n6.Sort by State\n7.Sort by Zip\n8.Display\n9.Search By City\n10.Search by State\n11.View By City\n12.View By State");
              System.out.println("Enter Your Choice");
              choice=scanner.nextInt();
              switch (choice) 
@@ -48,11 +48,16 @@ public class AddressBookMain {
                 case 8:
                     personmethods.Display();
                     break;
-               
                 case 9:
-                    personmethods.viewByCity();
+                    personmethods.SearchCity();
                     break;
                 case 10:
+                    personmethods.SearchState();
+                    break;
+                case 11:
+                    personmethods.viewByCity();
+                    break;
+                case 12:
                     personmethods.viewByState();
              }  
          }

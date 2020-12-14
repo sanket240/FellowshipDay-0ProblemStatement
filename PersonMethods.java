@@ -113,7 +113,31 @@ public class PersonMethods
 	        }
 	    }
 	    
-	  
+	    public void SearchCity()
+	    {
+	    	System.out.println("Enter city:");
+	    	String city_name=scanner.nextLine();
+	    	for(Person per : person)
+	    	{
+	    		if(city_name.equals(per.city))
+	    		{
+	    			System.out.println(per.toString());
+	    		}
+	    	}
+	    }
+	    public void SearchState()
+	    {
+	    	
+	    	System.out.println("Enter state:");
+	    	String state_name=scanner.nextLine();
+	    	for(Person per : person)
+	    	{
+	    		if(state_name.equals(per.state))
+	    		{
+	    			System.out.println(per.toString());
+	    		}
+	    	}
+	    }
 
 		public void viewByCity()
 		{
