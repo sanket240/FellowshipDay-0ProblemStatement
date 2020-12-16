@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import java.util.Iterator;
 
-public class PersonMethods
+public class PersonMethods implements PersonMethod
 {
 		ArrayList<Person> person=new ArrayList<>();
 		Scanner scanner=new Scanner(System.in);
@@ -172,4 +172,6 @@ public class PersonMethods
 			System.out.println("The Dictionary Contains:"+infoState);
 			
 		}
+
+		
 }
